@@ -27,8 +27,9 @@ class _HomeScreenState extends State<HomeScreen> {
               radius: 90,
               status: status,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Wrap(
+              alignment: WrapAlignment.center,
               spacing: 20,
               children: [
                 ElevatedButton(
@@ -36,35 +37,35 @@ class _HomeScreenState extends State<HomeScreen> {
                     status = ProgressIndicatorStatus.start;
                     setState(() {});
                   },
-                  child: Text('start'),
+                  child: const Text('start'),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     status = ProgressIndicatorStatus.reverse;
                     setState(() {});
                   },
-                  child: Text('reverse'),
+                  child: const Text('reverse'),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     status = ProgressIndicatorStatus.cancel;
                     setState(() {});
                   },
-                  child: Text('cancel'),
+                  child: const Text('cancel'),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     status = ProgressIndicatorStatus.fail;
                     setState(() {});
                   },
-                  child: Text('fail'),
+                  child: const Text('fail'),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     status = ProgressIndicatorStatus.succeed;
                     setState(() {});
                   },
-                  child: Text('succeed'),
+                  child: const Text('succeed'),
                 ),
               ],
             ),

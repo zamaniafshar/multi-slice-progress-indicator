@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-
 import 'package:multi_slice_progress_indicator/constants.dart';
-
 import 'progress_indicator_status.dart';
 import 'widgets/progress_indicator_painter.dart';
 
