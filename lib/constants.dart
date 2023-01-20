@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final progressIndicatorColors = [
+final inActiveColors = [
   Colors.blueGrey.shade800,
   Colors.blueGrey.shade800,
   Colors.blueGrey.shade700,
@@ -41,5 +41,3 @@ final failColors = [
   Colors.red.shade100,
   Colors.white,
 ];
-
-const startDeg = 90;

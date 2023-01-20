@@ -17,11 +17,3 @@ extension SizeHelpers on Size {
     ).createShader(centerRect);
   }
 }
-
-extension LinearGradientMaker on List<Color> {
-  LinearGradient get getLinearGradient => LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: this,
-      );
-}
