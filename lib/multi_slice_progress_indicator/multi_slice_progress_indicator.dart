@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:multi_slice_progress_indicator/constants.dart';
 import 'progress_indicator_status.dart';
 import 'widgets/progress_indicator_painter.dart';
 
@@ -9,10 +8,18 @@ class MultiSliceProgressIndicator extends StatefulWidget {
     Key? key,
     required this.radius,
     required this.status,
+    required this.successColors,
+    required this.failColors,
+    required this.inActiveColors,
+    this.startDeg = 90,
   }) : super(key: key);
 
   final double radius;
   final ProgressIndicatorStatus status;
+  final List<Color> successColors;
+  final List<Color> failColors;
+  final List<Color> inActiveColors;
+  final double startDeg;
 
   @override
   State<MultiSliceProgressIndicator> createState() => _MultiSliceProgressIndicatorState();
@@ -122,9 +129,9 @@ class _MultiSliceProgressIndicatorState extends State<MultiSliceProgressIndicato
     controller3.reset();
   }
 
-  double get shaderDeg1 => (isAnimatingColors ? 0.0 : controller1.value * 360) + startDeg;
-  double get shaderDeg2 => (isAnimatingColors ? 0.0 : controller2.value * 360) + startDeg;
-  double get shaderDeg3 => (isAnimatingColors ? 0.0 : controller3.value * 360) + startDeg;
+  double get shaderDeg1 => (isAnimatingColors ? 0.0 : controller1.value * 360) + widget.startDeg;
+  double get shaderDeg2 => (isAnimatingColors ? 0.0 : controller2.value * 360) + widget.startDeg;
+  double get shaderDeg3 => (isAnimatingColors ? 0.0 : controller3.value * 360) + widget.startDeg;
 
   List<Color> getAnimatedColors(AnimationController controller) {
     if (!isAnimatingColors) return currentColors;
@@ -139,11 +146,11 @@ class _MultiSliceProgressIndicatorState extends State<MultiSliceProgressIndicato
 
   List<Color> get getProgressColors {
     if (widget.status.isSucceed) {
-      return succeedColors;
+      return widget.successColors;
     } else if (widget.status.isFail) {
-      return failColors;
+      return widget.failColors;
     } else {
-      return progressIndicatorColors;
+      return widget.inActiveColors;
     }
   }
 

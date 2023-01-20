@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multi_slice_progress_indicator/constants.dart';
 import 'package:multi_slice_progress_indicator/multi_slice_progress_indicator/multi_slice_progress_indicator.dart';
 import 'package:multi_slice_progress_indicator/multi_slice_progress_indicator/progress_indicator_status.dart';
 
@@ -16,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('progress indicator'),
+        title: const Text('Progress Indicator'),
       ),
       body: SizedBox.expand(
         child: Column(
@@ -26,6 +27,9 @@ class _HomeScreenState extends State<HomeScreen> {
             MultiSliceProgressIndicator(
               radius: 90,
               status: status,
+              failColors: failColors,
+              inActiveColors: inActiveColors,
+              successColors: succeedColors,
             ),
             const SizedBox(height: 20),
             Wrap(
